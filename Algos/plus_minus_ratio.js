@@ -1,4 +1,4 @@
-function plusMinus(arr) {
+const plusMinus = (arr) => {
     let x = arr.length
     let pos = 0
     let neg = 0

@@ -1,10 +1,10 @@
-function greeting(parameterVariable) {
+const greeting = (parameterVariable) => {
     // This line prints 'Hello, World!' to the console:
     console.log('Hello, World!');
     console.log(parameterVariable);
 }
 
-function performOperation(secondInteger, secondDecimal, secondString) {
+const performOperation = (secondInteger, secondDecimal, secondString) => {
     // Declare a variable named 'firstInteger' and initialize with integer value 4.
     const firstInteger = 4;
     

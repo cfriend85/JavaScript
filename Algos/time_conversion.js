@@ -1,4 +1,4 @@
-let timeConversion = (s) => {
+const timeConversion = (s) => {
         let AMPM = s.slice(-2);
         let timeArr = s.slice(0, -2).split(":");
         

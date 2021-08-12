@@ -1,4 +1,4 @@
-function sortMe(array){
+const sortMe = (array) => {
     temp = []
     for(i = 0; i < array.length; i++){
         temp.push(array[i] * array[i])

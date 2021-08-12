@@ -1,4 +1,4 @@
-let birthdayCakeCandles = (candles) => {
+const birthdayCakeCandles = (candles) => {
     candles.sort()
     let count = 0
     let max = 0

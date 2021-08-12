@@ -1,4 +1,4 @@
-function twoNumSum(arr, target){
+const twoNumSum = (arr, target) => {
     var newArr = []
     for(i = 0; i < arr.length; i++){
         for(j = i+1; j < arr.length; j++){

@@ -1,4 +1,4 @@
-function compareTriplets(a, b) {
+const compareTriplets = (a, b) => {
     var alice = 0
     var bob = 0
     for(let i = 0; i < b.length; i++){

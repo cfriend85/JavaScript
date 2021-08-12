@@ -9,7 +9,7 @@ const countApplesAndOranges = (s, t, a, b, apples, oranges) => {
 
 
 //  Loop method
-function countApplesAndOranges(s, t, a, b, apples, oranges) {
+const countApplesAndOranges = (s, t, a, b, apples, oranges) => {
     let totalApples = 0;
     let totalOranges = 0;
     for (let i = 0; i <= apples.length; i++) {

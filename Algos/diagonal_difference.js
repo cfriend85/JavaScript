@@ -1,4 +1,4 @@
-function diagonalDifference(arr) {
+const diagonalDifference = (arr) => {
     let x = arr.length
     let main = 0
     let sec = 0
