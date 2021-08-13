@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <title>Mad Libs</title>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Create a Mad Lib!</h1>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective1" placeholder="adjective"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective2" placeholder="adjective"/><br>
+        </div>
+        
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective3" placeholder="adjective"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective4" placeholder="adjective"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective5" placeholder="adjective"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective6" placeholder="adjective"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective7" placeholder="adjective"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective8" placeholder="adjective"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective9" placeholder="adjective"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective10" placeholder="adjective"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="adjective11" placeholder="adjective"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="noun1" placeholder="noun"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="noun2" placeholder="noun"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="place" placeholder="place"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="vehicle" placeholder="vehicle(plural noun)"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="plural_noun1" placeholder="plural noun"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="plural_noun2" placeholder="plural noun"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="plural_noun3" placeholder="plural noun"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="plural_noun4" placeholder="plural noun"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="job" placeholder="job(plural noun)"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="verb1" placeholder="verb"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="verb2" placeholder="verb"/><br>
+        </div>
+
+        
+        <div class="form-group">
+            <input class="form-control" type="text" id="verb3" placeholder="verb"/><br>
+        </div>
+
+
+        <button onclick="buildStory()" class="btn btn-success">Assemble story</button>
+
+        <h1>Your story down below!</h1>
+        <h3 id="story"></h3>
+    </div>
+</body>
+<script>
+    // adjectives: 11, nouns: 2, place: 1, vehicle: 1, plural nouns: 4, job: 1, verbs: 3, 
+    const buildStory = () => {
+        const adjective1 = document.getElementById("adjective1").value;
+        const adjective2 = document.getElementById("adjective2").value;
+        const adjective3 = document.getElementById("adjective3").value;
+        const adjective4 = document.getElementById("adjective4").value;
+        const adjective5 = document.getElementById("adjective5").value;
+        const adjective6 = document.getElementById("adjective6").value;
+        const adjective7 = document.getElementById("adjective7").value;
+        const adjective8 = document.getElementById("adjective8").value;
+        const adjective9 = document.getElementById("adjective9").value;
+        const adjective10 = document.getElementById("adjective10").value;
+        const adjective11 = document.getElementById("adjective11").value;
+
+        const noun1 = document.getElementById('noun1').value;
+        const noun2 = document.getElementById('noun2').value;
+        
+        
+        const place = document.getElementById('place').value;
+
+        const vehicle = document.getElementById('vehicle').value;
+        
+        const plural_noun1 = document.getElementById('plural_noun1').value;
+        const plural_noun2 = document.getElementById('plural_noun2').value;
+        const plural_noun3 = document.getElementById('plural_noun3').value;
+        const plural_noun4 = document.getElementById('plural_noun4').value;
+
+        const job = document.getElementById('job').value;
+        
+        const verb1 = document.getElementById('verb1').value;
+        const verb2 = document.getElementById('verb2').value;
+        const verb3 = document.getElementById('verb3').value;
+        
+        
+        let story = document.getElementById("story");
+        const storyText = `Star Wars is a ${adjective1} ${noun1} of ${adjective2} versus evil in a ${place} far far away. 
+        There are ${adjective3} battles between ${adjective4} and ${vehicle} in ${adjective5} space and ${adjective6} duels with ${plural_noun1}
+        called ${adjective7} sabers. ${plural_noun2} called "droids" are helpers and ${plural_noun3} to the heroes. A ${adjective8} power called 
+        The ${noun2} ${verb1}s people to do ${adjective9} things, like ${verb2} ${plural_noun4}. The Jedi ${job} use The Force for the ${adjective10}
+        side and the Sith ${verb3} it for the ${adjective11} side. `
+        story.innerHTML = storyText;
+    }
+</script>
+</html>
