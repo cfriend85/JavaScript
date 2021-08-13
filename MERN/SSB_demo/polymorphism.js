@@ -121,10 +121,3 @@ link.special(pika)
 link.special(pika)
 console.log(pika)
 console.log(link)
-
-// class Link extends Fighter{
-//     constructor(color, playerNum){
-//         console.log("hello from the Link class!");
-//         super(`${color} Link`, playerNum);
-//     }
-// }
