@@ -15,7 +15,7 @@ const {iceCream, cherry} = sundae;
 
 
 const [oneTopping, second, another, last] = toppings
-// this could be like [first,......others] and it will give you the first one and then an array with all the others.
+// this could be like [first, ...others] and it will give you the first one and then an array with all the others.
 
 
 

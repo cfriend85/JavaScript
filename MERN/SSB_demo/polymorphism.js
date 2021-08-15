@@ -65,11 +65,11 @@ class Link extends Fighter{
             this.bombOut = false;
 
             if(Math.floor(Math.random() * 2) === 0){
-                console.log(`${this.name} thew a bomb at ${otherPlayer.name} but it missed!`)
+                console.log(`${this.name} threw a bomb at ${otherPlayer.name} but it missed!`)
             }
             else{
                 const damage = 50;
-                console.log(`${this.name} thew a bomb at ${otherPlayer.name} and dealt ${damage} damage!`)
+                console.log(`${this.name} threw a bomb at ${otherPlayer.name} and dealt ${damage} damage!`)
                 otherPlayer.percentage += damage;
                 otherPlayer.isKilled()
             }

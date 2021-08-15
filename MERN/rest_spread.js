@@ -6,7 +6,8 @@ if(flavors.length > 3){
 
 // const faveToppings = ["pecans", ...toppings];
 // !!!!!!!!!!!!!!!!!!!! OR !!!!!!!!!!!!!!!!!!!!!!!!!!
-const faveToppings = ["banana slice", ...toppings, "pecans"];
+const faveToppings = ["banana slice", ...toppings, "pecans"]; //SPREAD
+const otherFaveToppings = [...toppings, ...flavors]; // SPREAD
 const sundae = {
     "iceCream": "vanilla",
     "toppings": toppings,
@@ -21,7 +22,9 @@ const deluxeSundae = {
 
 console.log(faveToppings)
 console.log(deluxeSundae)
-const [first,...others] = toppings;
+const [first,...others] = toppings; //REST
 
 console.log(first);
 console.log(others)
+console.log(faveToppings)
+console.log(otherFaveToppings)

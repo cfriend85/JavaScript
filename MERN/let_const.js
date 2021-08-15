@@ -26,6 +26,23 @@ function doAThing(){
 doAThing()
 
 
+let pete = 10
+const bob = (num) => {
+    if(num < 10){
+        num = 0
+    }
+    else if(num > 10){
+        num += 100
+    }
+    else{
+        num += 2
+    }
+    return num
+}
+
+console.log(bob(pete))
+
+
 
 
 
