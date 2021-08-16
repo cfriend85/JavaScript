@@ -5,9 +5,9 @@ class PostBlock extends Component{
         return(
     <>
         <div className="border p-5 m-5">
-            <h3>Posted by: {this.props.fName}</h3>
-            <h1>"{this.props.text}"</h1>
-            <p>Likes: {this.props.likes} RT: {this.props.rt}</p>
+            <h1>{this.props.lName}, {this.props.fName}</h1>
+            <h5>Age {this.props.age}</h5>
+            <h5>Hair Color: {this.props.hair}</h5>
         </div>
     </>
         )

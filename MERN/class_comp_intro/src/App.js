@@ -1,20 +1,18 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PostBlock from './components/PostBlock'
+import PersonCard from './components/PersonCard'
 
 function App() {
   
   return (
     <div className="App text-center p-5">
-    <PostBlock text="Howdy!" fName="Charles" likes="10000" rt="1000"/>
+    <PersonCard lName="Friend" fName="Charles" age="36" hair="Red"/>
 
-    <PostBlock text="Bond, James Bond" fName="James" likes="1000000" rt="50000"/>
+    <PersonCard lName="Friend" fName="Mark" age="64" hair="None"/>
 
-    <PostBlock text="I'm Batman" fName="Batman" likes="1" rt="1"/>
-
-    <PostBlock text="UBR?" fName="Mark" likes="10" rt="5"/>
+    <PersonCard lName="Friend" fName="Wyatt" age="4" hair="Blonde"/>
     
-    <PostBlock text="Go to jail, directly to jail. Do not pass go, do not collect $200" fName="Uncle Pennybags" likes="100000000" rt="500000"/>
+    <PersonCard lName="Friend" fName="Nathan" age="36" hair="Red"/>
     </div>
   );
 }
