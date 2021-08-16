@@ -6,13 +6,13 @@ function App() {
   
   return (
     <div className="App text-center p-5">
-    <PersonCard lName="Friend" fName="Charles" age="36" hair="Red"/>
+    <PersonCard lName="Friend" fName="Charles" age="36" hair="Red" likes={10}/>
 
-    <PersonCard lName="Friend" fName="Mark" age="64" hair="None"/>
+    <PersonCard lName="Friend" fName="Mark" age="64" hair="None" likes={500}/>
 
-    <PersonCard lName="Friend" fName="Wyatt" age="4" hair="Blonde"/>
+    <PersonCard lName="Friend" fName="Wyatt" age="4" hair="Blonde" likes={1000}/>
     
-    <PersonCard lName="Friend" fName="Nathan" age="36" hair="Red"/>
+    <PersonCard lName="Friend" fName="Nathan" age="36" hair="Red" likes={-25}/>
     </div>
   );
 }

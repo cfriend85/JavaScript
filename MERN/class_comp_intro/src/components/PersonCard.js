@@ -4,10 +4,14 @@ class PersonCard extends Component{
     constructor(props){
         super(props);
         this.state = {
-            likes: 0
+            likes: this.props.likes
         }
     }
     render(){
+        const increaseLikes = () => {
+            console.log("clicked like on " + this.props.fName + "'s post")
+            this.setState({likes: this.state.likes + 1})
+        }
         return(
     <>
         <div className="border p-5 m-5">
@@ -15,7 +19,7 @@ class PersonCard extends Component{
             <h5>Age {this.props.age}</h5>
             <h5>Hair Color: {this.props.hair}</h5>
             <p>Likes: {this.state.likes}</p>
-            <button onClick={() => this.setState({likes: this.state.likes + 1})} className="btn btn-sm btn-dark">Like</button>
+            <button onClick={increaseLikes} className="btn btn-sm btn-dark">Like</button>
         </div>
     </>
         )
