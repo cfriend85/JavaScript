@@ -1,0 +1,28 @@
+*{
+  padding: 1px;
+}
+#arena{
+  height:100%;
+  background-color: #bf510c;
+  opacity: 0.8;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #bf510c 10px ), repeating-linear-gradient( #cac5c055, #cac5c0 );
+  border: 5px ridge black;
+  border-radius: 10px;
+  padding: 25px;
+  
+}
+
+.card{
+  height: fit-content;
+  width: 500px;
+}
+
+.smash{
+  align-items: center;
+  margin-left: 150px;
+}
+
+/* This makes sure that App.js takes up the full page(vertically) */
+body > #root > div { 
+  height: 100vh;
+}
