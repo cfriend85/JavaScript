@@ -9,6 +9,7 @@
   border: 5px ridge black;
   border-radius: 10px;
   padding: 25px;
+  height: 100%;
   
 }
 
@@ -17,8 +18,11 @@
   width: 500px;
 }
 
+.card-img-top{
+  height: 300px;
+}
+
 .smash{
-  align-items: center;
   margin-left: 150px;
 }
 
