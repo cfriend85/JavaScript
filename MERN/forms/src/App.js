@@ -1,10 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import BigForm from './components/BigForm';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Howdy! Form Demo!</h1>
+      <BigForm />
     </div>
   );
 }
