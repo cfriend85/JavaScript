@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ClassTime from './components/ClassTime';
 import FunctionalTime from './components/FunctionalTime';
+import Form from './components/Form';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       
       
       <FunctionalTime message="Hiya buddy!" subMessage="Hey there pal!"/>
-
+      <Form />
     </div>
   );
 }
