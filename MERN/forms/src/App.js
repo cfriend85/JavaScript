@@ -1,12 +1,14 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BigForm from './components/BigForm';
+import SmallForm from './components/SmallForm';
 
 
 function App() {
   return (
     <div className="App">
-      <BigForm />
+      {/* <BigForm /> */}
+      <SmallForm />
     </div>
   );
 }
