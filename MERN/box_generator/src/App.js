@@ -22,7 +22,7 @@ function App() {
       <input type="text" name="color" onChange={(event) => setForm(event.target.value)}/>
       <input type="submit" value="Add"/>
       </form><br></br>
-      <div className="boxes d-flex flex-wrap">
+      <div className="d-flex flex-wrap">
       {
         boxes.map((box, i) => <Box key={i} text={box}/>)
       }

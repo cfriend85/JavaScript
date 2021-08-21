@@ -11,7 +11,7 @@ const Box = (props) => {
     
     return(
     <div>
-        <div className="box m-2" style={myStyle}></div>
+        <div className="m-2" style={myStyle}></div>
     </div>
         
     )
