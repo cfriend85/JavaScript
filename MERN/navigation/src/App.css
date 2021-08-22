@@ -3,11 +3,13 @@
   background-color: #494949;
   opacity: 0.8;
   background: repeating-linear-gradient( 45deg, #6bb33c, #6bb33c 7.5px, #494949 7.5px, #494949 37.5px );
-  padding-top: 250px;
+  padding-top: 50px;
 }
 
 .card{
   margin-left: 650px;
+  margin-bottom: 50px;
+  display: flex;
   height: 350px;
   width: 550px;
 }
@@ -16,7 +18,7 @@
   height: 150px;
 }
 
-body > #root > div { 
+/* body > #root > div { 
   height: 100vh;
-}
+} */
 
