@@ -6,14 +6,41 @@ import Step from './components/Step';
 function App() {
 
   const [steps, setSteps] = useState([
-    {direction: "Right", text:"On Peoria St"},
-    {direction: "Left", text:"On Parker Rd"},
-    {direction: "Forward", text:"On CO 83"},
-    {direction: "Right", text:"On Arapahoe Rd"}
   ])
+
+  const [form, setForm] = useState({
+    direction: "Right", //this sets the default to be what the first option is so that a blank string isn't submitted
+    text: ""
+  })
+
+  const onChangeHandler = (event) => {
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    setSteps([...steps, form])
+    document.forms['form'].reset()
+  }
 
   return (
     <div className="App">
+      <div>
+          <form onSubmit={onSubmitHandler} name="form" className="form">
+          <label>Direction:</label>
+          <select onChange={onChangeHandler} name="direction" >
+          <option value="Right">Right</option>
+          <option value="Left">Left</option>
+          <option value="Forward">Forward</option>
+          </select><br></br>
+          <label>On which(Rd, Ave, Blvd, St)</label>
+          <input onChange={onChangeHandler} type="text" name="text"/><br></br>
+          <input type="submit" value="Add step" className="btn btn-success"/>
+          </form>
+      </div>
       <div className="d-flex flex-wrap">
         {
       steps.map((item, i) => <Step key={i} direction={item.direction} text={item.text}/>)

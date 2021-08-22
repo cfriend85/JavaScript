@@ -11,7 +11,6 @@ const Step = (props) => {
             <img src={direction === "Right" ? rightArrow : direction === "Left" ? leftArrow : forward} className="left-arrow" alt="arrow"/>
         <div className="card-body">
             <p className="card-text">{direction} {props.text}</p>
-            <a href="#" className="btn btn-danger">Stop Navigation</a>
         </div>
         </div>
     )
