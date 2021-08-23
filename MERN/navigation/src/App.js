@@ -9,7 +9,7 @@ function App() {
   ])
 
   const [form, setForm] = useState({
-    direction: "Right", //this sets the default to be what the first option is so that a blank string isn't submitted
+    direction: "Right", //this sets the default to be what the first option is(Right in this case) so that a blank string isn't submitted
     text: ""
   })
 
@@ -37,7 +37,7 @@ function App() {
           <option value="Forward">Forward</option>
           </select><br></br>
           <label>On which(Rd, Ave, Blvd, St)</label>
-          <input onChange={onChangeHandler} type="text" name="text"/><br></br>
+          <input onChange={onChangeHandler} type="text" name="text" placeholder="On Kansas Ave."/><br></br>
           <input type="submit" value="Add step" className="btn btn-success"/>
           </form>
       </div>
