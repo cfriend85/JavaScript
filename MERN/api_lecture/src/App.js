@@ -11,7 +11,7 @@ function App() {
     axios.get(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
     .then(res => setBreweries(res.data))
     .catch(err => console.log(err))
-  }, [city]) //dependancy array
+  }, [city]) //dependancy array will change the useEffect to update the change. If this is empty it won't change automatically
 
   const getBreweryInfo = (event) => {
     axios.get(`https://api.openbrewerydb.org/breweries?by_city=${city}`) // a package that is installed and has an npm page
