@@ -5,11 +5,17 @@ import axios from 'axios';
 
 function App() {
   const [breweries, setBreweries] = useState([])
+  const [city, setCity] = useState("Chicago")
+  const [form, setForm] = useState("")
 
   const getBreweryInfo = (event) => {
-    axios.get("https://api.openbrewerydb.org/breweries") // a package that is installed and has an npm page
+    axios.get(`https://api.openbrewerydb.org/breweries?by_city=${city}`) // a package that is installed and has an npm page
     .then(res => setBreweries(res.data))
     .catch(err => console.log(err))
+    
+    // axios.get("https://api.openbrewerydb.org/breweries")
+    // .then(res => setBreweries(res.data))
+    // .catch(err => console.log(err))
 
     // fetch("https://api.openbrewerydb.org/breweries") // basic JS that you don't have to install or import
     //   .then(res => res.json())
@@ -18,6 +24,7 @@ function App() {
   }
   return (
     <div className="App">
+      <input type="text" placeholder="City" onChange={(event) =>  setCity(event.target.value)} className="mt-5"/><br></br>
       <button className="btn btn-primary btn-lg mt-5" onClick={getBreweryInfo}>Go!</button>
       {
         breweries.map((item, i) => <h1 key={i}>{item.name}: {item.city}, {item.state}</h1>)
