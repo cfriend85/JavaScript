@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 const port = 8000;
 
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+
 app.get("/", (req, res) => {
     res.json({message: "Home!", anotherkey: [1,2,3,4,5], yetanotherkey: 9})
 });
@@ -12,11 +17,15 @@ app.get("/api", (req, res) => {
 
 app.get("/api/:word", (req, res) => {
     res.json({message: `your word is ${req.params.word}`})
-})
+});
 
 app.get("/api/users/:id", (req, res) => {
     res.json({id: req.params.id, user_name: "person1"})
-})
+});
+
+// app.post("/api/repeat/", (req, res) => {
+//     res.json(req.body);
+// })
 
 
 
