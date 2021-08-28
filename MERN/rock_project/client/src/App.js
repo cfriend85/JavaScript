@@ -21,6 +21,7 @@ function App() {
               <tr>
                 <th>Name</th>
                 <th>Color</th>
+                <th>Feel</th>
                 <th>Weight</th>
                 <th>Date Found</th>
               </tr>
@@ -31,6 +32,7 @@ function App() {
                 return <tr key={i}>
                   <td className="table-light">{item.name}</td>
                   <td className="table-light">{item.color}</td>
+                  <td className="table-light">{item.feel}</td>
                   <td className="table-light">{item.weight}</td>
                   <td className="table-light">{item.foundDate}</td>
                 </tr>

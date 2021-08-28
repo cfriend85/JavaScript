@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const RockSchema = new mongoose.Schema({
     name: String,
     color: String,
-    feels: String,
+    feel: String,
     weight: Number,
     foundDate: Date
 });

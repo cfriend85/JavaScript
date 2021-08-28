@@ -12,7 +12,13 @@ module.exports.createRock = (req, res) => {
         .catch(err => res.json({message: "Not quite right!", error: err}))
 }
 
-module.exports.updateExistingRock = (req, res) => {
+module.exports.findOneRock = (req, res) => {
+    Rock.findOne({_id: req.params.id})
+        .then(rock => res.json({rock: rock}))
+        .catch(err => res.json({message: "Not quite right!", error: err}))
+}
+
+module.exports.updateRock = (req, res) => {
     Rock.findOne({_id: req.params.id})
     .then(rock => {
         rock.name = req.body.name,
@@ -24,3 +30,9 @@ module.exports.updateExistingRock = (req, res) => {
     .then(updatedRock => res.json(updatedRock))
     .catch(err => res.json({message: "Not quite right!", error: err}));
 }
+
+module.exports.deleteRock = (req, res) => {
+    Rock.deleteOne({ _id: req.params.id })
+        .then(result => res.json({message: "Rock deleted", result: result }))
+        .catch(err => res.json({ message: 'Not quite right!', error: err }));
+    }
