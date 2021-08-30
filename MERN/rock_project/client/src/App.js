@@ -42,6 +42,19 @@ const onSubmitHandler = (event) => {
 		setLoaded(false);
 	})
 	.catch(err => console.log(err))
+    document.forms['new_rock'].reset()
+}
+
+const onDeleteHandler = (_id) => {
+    if(window.confirm("Are you sure you want to delete this item!?")){
+        axios.delete(`http://localhost:8000/api/delete/rock/${_id}`)
+        .then(res => {
+            console.log(res)
+            setLoaded(false)
+        })
+        .catch(err => console.log(err))
+    }
+
 }
 
 
@@ -49,7 +62,7 @@ const onSubmitHandler = (event) => {
     <div className="App">
     <h1>Full stack time!</h1>
         
-        <form className="m-5" onSubmit={onSubmitHandler}>
+        <form className="m-5" name="new_rock" onSubmit={onSubmitHandler}>
         
         <div className="form-group">
         <label htmlFor="name">Name:</label>
@@ -69,7 +82,7 @@ const onSubmitHandler = (event) => {
         <div className="form-group">
         <label htmlFor="weight">Weight:</label>
         <input type="text" name="weight" className="form-control" onChange={onChangeHandler}/>
-        </div>
+        </div><br></br>
         <input type="submit" value="Add rock" className="btn btn-success" />
         </form>
         <table className="table table-dark">
@@ -80,6 +93,7 @@ const onSubmitHandler = (event) => {
                 <th>Feel</th>
                 <th>Weight</th>
                 <th>Date Found</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -91,6 +105,7 @@ const onSubmitHandler = (event) => {
             <td className="table-light">{item.feel}</td>
             <td className="table-light">{item.weight}</td>
             <td className="table-light">{item.foundDate}</td>
+            <td className="table-light"><button className="btn btn-danger btn-sm" onClick={() => onDeleteHandler(item._id)}>Delete</button></td>
             </tr>
             })
         }
