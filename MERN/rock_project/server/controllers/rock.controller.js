@@ -19,18 +19,14 @@ module.exports.findOneRock = (req, res) => {
 }
 
 module.exports.updateRock = (req, res) => {
-    Rock.findOne({_id: req.params.id})
-    .then(rock => {
-        rock.name = req.body.name,
-        rock.color = req.body.color,
-        rock.feel = req.body.feel,
-        rock.weight = req.body.weight,
-        rock.foundDate = req.body.foundDate
-        return rock.save();
-    })
-    .then(updatedRock => res.json(updatedRock))
-    .catch(err => res.json({message: "Not quite right!", error: err}));
-}
+        Rock.findOneAndUpdate(
+            { _id: req.params.id },
+            req.body,
+            { new: true, runValidators: true }
+        )
+            .then(updatedRock => res.json({ rock: updatedRock }))
+            .catch(err => res.json({ message: 'Not quite right!', error: err }));
+    }
 
 module.exports.deleteRock = (req, res) => {
     Rock.deleteOne({ _id: req.params.id })

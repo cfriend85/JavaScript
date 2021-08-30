@@ -5,5 +5,5 @@ module.exports = app => {
     app.post('/api/rocks/create', RockController.createRock);
     app.get('/api/rocks/:id', RockController.findOneRock);
     app.put('/api/rocks/update/:id', RockController.updateRock);
-    app.get('/api/delete/rock/:id', RockController.deleteRock);
+    app.delete('/api/delete/rock/:id', RockController.deleteRock);
 }
