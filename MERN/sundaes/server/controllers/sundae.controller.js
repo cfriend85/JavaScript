@@ -31,7 +31,7 @@ module.exports.updateSundae = (req, res) => {
 module.exports.addTopping = (req, res) => {
     Sundae.findOneAndUpdate(
         { _id: req.params.id },
-        {$push: {toppings: req.body.toppings}}
+        {$push: {toppings: req.body.topping}}
     )
     .then(updatedSundae => res.json({ sundae: updatedSundae }))
     .catch(err => res.json({ message: 'Not quite right!', error: err }));
