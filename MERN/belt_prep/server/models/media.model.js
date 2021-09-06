@@ -15,6 +15,12 @@ const MediaSchema = new mongoose.Schema({
     image_url: {
         type: String,
         required: [true, "Media must have an image!"],
+        validate: {
+            validator: (input) => {
+                return /.*([A-Za-z1-9]+)\.([A-Za-z1-9]+).*/.test(input)
+            },
+            message: (input) => `${input.value} is not a valid URL!`
+        }
     },
 
     year: {
@@ -22,7 +28,7 @@ const MediaSchema = new mongoose.Schema({
         require: [true, "The year released is required"],
         validate: {
             validator: (input) => {
-                return input.length >= 1902
+                return input >= 1902
             },
             message: (input) => `${input.value} is before media became a thing, they were reading books in ${input.value}!`
         }

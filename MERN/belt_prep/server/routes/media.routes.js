@@ -6,4 +6,5 @@ module.exports = app => {
     app.get('/api/media/:id', MediaController.findOneMedia);
     app.put('/api/media/update/:id', MediaController.updateMedia);
     app.delete('/api/media/delete/:id', MediaController.deleteMedia);
+    app.patch("/api/media/addActor/:id", MediaController.addActor);
 }

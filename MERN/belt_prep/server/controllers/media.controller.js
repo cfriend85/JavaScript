@@ -33,3 +33,12 @@ module.exports.deleteMedia = (req, res) => {
         .then(result => res.json({message: "Media deleted", result: result }))
         .catch(err => res.json({ message: 'Not quite right!', error: err }));
 }
+
+module.exports.addActor = (req, res) => {
+    Media.findOneAndUpdate(
+        { _id: req.params.id },
+        {$push: {actors: req.body.actor}}
+    )
+    .then(result => res.json({ result: result }))
+    .catch(err => res.json({ message: 'Not quite right!', error: err }));
+}
