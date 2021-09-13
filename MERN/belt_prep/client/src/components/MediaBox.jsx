@@ -2,11 +2,12 @@ import React from 'react';
 
 const MediaBox = (props) => {
     return(
-<div className="card">
+<div className="cards d-flex justify-content-around flex-wrap p-3">
+    <div className="card p-2">
     <img className="media_img" src={props.item.image_url} alt="Media image" />
     <div className="card-body">
-    <h1 className="card-title">{props.item.title}</h1>
-        <div className="card_table table table-dark p-3">
+    <h1>{props.item.title}</h1>
+        <div className="card_table table table-dark">
             <table>
                 <thead>
                     <th>Release Year</th>
@@ -24,6 +25,7 @@ const MediaBox = (props) => {
                 </tbody>
             </table>
         </div>
+    </div>
     </div>
 </div>
     )

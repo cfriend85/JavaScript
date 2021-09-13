@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import MediaBox from '../components/MediaBox';
+import { Link } from '@reach/router';
 
 const Main = (props) => {
     const [media, setMedia] = useState([])
@@ -13,13 +14,16 @@ const Main = (props) => {
     }, [media])
 
     return(
-        <div>
-                {
+    <>
+        <div className="d-flex justify-content-around flex-wrap p-3">
+            {
                 media.map((item, i) => {
                     return <MediaBox item={item} key={i}/>
                 })
             }
         </div>
+        <Link to='/new' className="btn btn-primary btn-lg">Create a new Movie/Show</Link>
+    </>
     )
 }
 
