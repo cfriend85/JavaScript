@@ -10,5 +10,6 @@
 
 .card:hover {
   border: 3px solid black;
-  transform: scale(1.1)
+  transform: scale(1.1);
+  cursor: pointer;
 }

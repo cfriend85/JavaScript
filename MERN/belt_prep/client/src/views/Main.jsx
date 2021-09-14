@@ -18,7 +18,7 @@ const Main = (props) => {
         <div className="d-flex justify-content-around flex-wrap p-3">
             {
                 media.map((item, i) => {
-                    return <MediaBox item={item} key={i}/>
+                    return <MediaBox item={item} key={i} />
                 })
             }
         </div>

@@ -41,7 +41,7 @@ const Create = (props) => {
     return(
         <div>
             <h1>Add new Movie or Show!<Link to="/" className="btn btn-warning btn-lg m-3">Home</Link></h1>
-            <Form onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler} errors={errors}/>
+            <Form onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler} form={form} errors={errors}/>
         </div>
     )
 }

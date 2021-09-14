@@ -1,9 +1,10 @@
 import React from 'react';
+import { navigate } from '@reach/router';
 
 const MediaBox = (props) => {
     return(
 <div className="cards d-flex justify-content-around flex-wrap p-3">
-    <div className="card p-2">
+    <div className="card p-2" onClick={() => navigate(`/${props.item._id}`)}>
     <img className="media_img" src={props.item.image_url} alt="Media image" />
     <div className="card-body">
     <h1>{props.item.title}</h1>
