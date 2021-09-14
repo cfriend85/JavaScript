@@ -38,7 +38,13 @@ const MediaSchema = new mongoose.Schema({
 
     director: {
         type: String,
-        require: [true, "You must include the Director!"]
+        require: [true, "You must include the Director!"],
+        validate: {
+            validator: (input) => {
+                return input.length >= 1
+            },
+            message: (input) => "You must include the Director!"
+        }
     },
 
     isMovie: {

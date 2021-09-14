@@ -14,6 +14,8 @@ const Create = (props) => {
         genre: ""
     })
 
+    const [errors, setErrors] = useState({})
+
     const onChangeHandler = (event) => {
         setForm({
             ...form,
@@ -26,14 +28,20 @@ const Create = (props) => {
         axios.post("http://localhost:8000/api/media/create", form)
         .then(res => {
             console.log(res);
-            navigate("/");
+            if(res.data.error){
+                setErrors(res.data.error.errors)
+            }
+            else{
+                console.log("No Errors")
+                navigate("/")
+            }
         })
         .catch(err => console.log(err))
     }
     return(
         <div>
             <h1>Add new Movie or Show!<Link to="/" className="btn btn-warning btn-lg m-3">Home</Link></h1>
-            <Form onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler}/>
+            <Form onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler} errors={errors}/>
         </div>
     )
 }
