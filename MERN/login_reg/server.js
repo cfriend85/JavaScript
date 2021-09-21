@@ -6,7 +6,7 @@ const port = 8000;
 const app = express();
 
 app.use(cors({
-    credentials: true, origin: 'http://localhost3000'
+    credentials: true, origin: 'http://localhost:3000'
 }));
 app.use(express.json());
 app.use(cookies());

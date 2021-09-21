@@ -18,7 +18,7 @@ class UserController {
         User.findOne({email: req.body.email})
             .then(user => {
                 if(user === null){
-                    res.json({msg: 'invlaid login attempt'})
+                    res.json({msg: 'User not found'})
                 } else{
                     bcrypt.compare(req.body.password, user.password)
                         .then(passwordIsValid => {
@@ -26,7 +26,7 @@ class UserController {
                                 res.cookie('usertoken', jwt.sign({_id: user._id}, secret), {httpOnly: true} )
                                 .json({msg: 'Login successful', user: user})
                             } else{
-                                res.json({msg: 'Invalid login'})
+                                res.json({msg: 'Password Incorrect'})
                             }
                         })
                         .catch(err => res.json({msg: 'invalid login', err}))
@@ -35,6 +35,19 @@ class UserController {
             .catch(err => res.json(err))
     }
 
+    findUser(req, res){
+        const decodedJWT = jwt.decode(req.cookies.usertoken, {complete: true});
+        User.findById(decodedJWT.payload._id)
+            .then(user => res.json({user}))
+            .catch(err => res.json(err))
+    }
+
+    logout(req, res){
+        res.cookie('usertoken', jwt.sign({_id:''}, secret), {
+            httpOnly: true,
+            maxAge: 0
+        }).json({msg: 'Logout Successful'})
+    }
 
 }
 
