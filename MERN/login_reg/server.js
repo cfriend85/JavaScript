@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const cookies = require('cookie-parser');
 const port = 8000;
-const db_name = 'loginreg'
 
 const app = express();
 
@@ -13,6 +12,7 @@ app.use(express.json());
 app.use(cookies());
 
 require('./server/config/mongoose.config')
+require('./server/routes/user.routes')(app)
 
 
 
