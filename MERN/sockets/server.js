@@ -11,4 +11,8 @@ const io = require('socket.io')(server, {cors: true})
 // Name of the trigger
 io.on('connection', socket => {
     console.log(socket.id)
+    socket.on('word', newWord => {
+        console.log('Got the word: ' + newWord);
+        io.emit('post word', newWord)
+    })
 })
