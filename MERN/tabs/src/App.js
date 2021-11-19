@@ -21,6 +21,7 @@ function App() {
       else{
         t.selected = false
       }
+      // setTabs([...tabs.slice(0,i), ...tabs.slice(i+1)]) Delete an item
       setTabs([...tabs.slice(0,i), t, ...tabs.slice(i+1)]) //spread everything before the thing we're looking for and include it's new value and then add everything after
       // setTabs([...tabs.slice(0,selectedIndex),...tabs.slice(selectedIndex+1)]) This is how you could delete the thing, by creating a new array of everything before it and after it without including it.
     })
