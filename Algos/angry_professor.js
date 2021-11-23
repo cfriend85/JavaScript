@@ -1,15 +1,19 @@
+// const angryProfessor = (k,a) => {
+//     let count = 0;
+//     for(let i = 0; i <= a.length; i++){
+//         if (a[i] <= 0) {
+//             count += 1
+//         }
+//     }
+//     if (count < k) {
+//         return "YES"
+//     } else{
+//         return "NO"
+//     }
+// }
+
 const angryProfessor = (k,a) => {
-    let count = 0;
-    for(let i = 0; i <= a.length; i++){
-        if (a[i] <= 0) {
-            count += 1
-        }
-    }
-    if (count < k) {
-        return "YES"
-    } else{
-        return "NO"
-    }
+    return ((a.filter(num => num <= 0).length >= k? 'NO' : 'YES'))
 }
 
 console.log(angryProfessor(3, [-1,-3,4,2]))
